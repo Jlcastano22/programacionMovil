@@ -1,28 +1,28 @@
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <view style={styles.estiloA}>
-        <text>A</text>
-      </view>
-      <view style={styles.estiloB}>
-        <text>B</text>
-      </view>
-      <view>
-        <view style={styles.estiloC}>
-          <text>C</text>
-        </view>
-        <view>
-          <text>D</text>
-        </view>
-        <view>
-          <text>E</text>
-        </view>
-      </view>
-      <view style={styles.estiloF}>
-        <text>F</text>
-      </view>
+      <View style={styles.estiloA}>
+        <Text>A</Text>
+      </View>
+      <View style={styles.estiloB}>
+        <Text>B</Text>
+      </View>
+      <View style={styles.estiloX}>
+        <View style={styles.estiloC}>
+          <Text>C</Text>
+        </View>
+        <View style={styles.estiloD}>
+          <Text>D</Text>
+        </View>
+        <View style={styles.estiloE}>
+          <Text>E</Text>
+        </View>
+      </View>
+      <View style={styles.estiloF}>
+        <Text>F</Text>
+      </View>
     </View>
   );
 }
@@ -32,28 +32,57 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'flex-start',
+    justifyContent: 'space-around',
     padding: 20,
   },
   estiloA: {
     backgroundColor: '#aaa',
     width: '90%',
-    height: 100,
+    height: '15%',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   estiloB: {
     backgroundColor: '#aaa',
     width: '90%',
-    height: 300,
+    height: '40%',
     marginTop: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  estiloX: {
+    width: '90%',
+    height: '15%',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
   },
   estiloC: {
     backgroundColor: '#aaa',
-    width: '90%',
+    width: '30%',
     height: 100,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  estiloD: {
+    backgroundColor: '#aaa',
+    width: '30%',
+    height: 100,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  estiloE: {
+    backgroundColor: '#aaa',
+    width: '30%',
+    height: 100,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   estiloF: {
     backgroundColor: '#aaa',
     width: '90%',
-    height: 100,
+    height: '15%',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
