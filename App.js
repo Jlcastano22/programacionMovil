@@ -1,13 +1,14 @@
 import { useState } from 'react';
-import { Button, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Button, Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   const [suma, setSuma] = useState(0);
   const [data, setData] = useState([]);
-  const urlBase = 'https://jsonplaceholder.typicode.com/';
+  const urlBase = 'https://rickandmortyapi.com/api/character';
+  // const urlBase = 'https://jsonplaceholder.typicode.com/';
 
   const getBooks = () => {
-    fetch(urlBase + '/todos')
+    fetch(urlBase + '/1,2,3,4,5,6,7,8,9,10')
       .then((response) => response.json())
       .then((dataApi) => setData(dataApi))
       .catch((error) => console.log(error));
@@ -34,24 +35,23 @@ export default function App() {
             {data.map((item) => (
               <View style={styles.containerBooks}>
                 <Text>{item.id}</Text>
-                <Text>{item.title}</Text>
+                <Text>{item.name}</Text>
+                <Image source={item.image} style={styles.containerImage} />
               </View>
             ))}
-          </View>
-        </ScrollView>
 
-        {/* <SafeAreaView>
-          <FlatList
+            {/* <FlatList
             data={data}
             keyExtactor={(item) => item.id}
             renderItem={({ item }) => (
               <View style={styles.containerBooks}>
                 <Text>{item.id}</Text>
-                <Text>{item.title}</Text>
+                <Text>{item.name}</Text>
               </View>
             )}
-          />
-        </SafeAreaView> */}
+          /> */}
+          </View>
+        </ScrollView>
       </View>
       <View style={styles.estiloX}>
         <View style={styles.estiloC}>
@@ -74,10 +74,11 @@ export default function App() {
 const styles = StyleSheet.create({
   containerBooks: {
     width: '35%',
-    height: 125,
+    height: 150,
     backgroundColor: 'coral',
     margin: 10,
     alignItems: 'center',
+    justifyContent: 'space-around',
     padding: 10,
   },
   containerApi: {
@@ -92,6 +93,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-around',
     padding: 20,
+  },
+  containerImage: {
+    height: 50,
+    width: 50,
   },
   estiloA: {
     backgroundColor: '#aaa',
